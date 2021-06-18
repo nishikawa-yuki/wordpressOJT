@@ -13,26 +13,17 @@
     <div class="main-h2">
       <h2>Latest Articles</h2>
     </div>
-    <?php
-        if( have_posts() ) :
-            while( have_posts() ) :
-                the_post(); ?>
-                <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-                    <ul class="post__meta">
-                        <li class="post__meta__item">
-                            <date class="post__meta__date"><?php echo get_the_date(); ?></date>
-                        </li>
-                    </ul>
-                    <?php the_post_thumbnail(); ?>
-                    <?php the_content( 'READ MORE' ); ?>
-                </div>
-            <?php endwhile;
-        else :
-            ?><p>表示する記事がありません</p><?php
-        endif;
-    ?>
     <div class="box">
-      
+      <div class="up-box">
+        <img src="<?php echo get_template_directory_uri(); ?>/images/post_img_1.png" alt="">
+        <div class="text-box">
+          <p class="up-date">2018.5.12</p>
+          <p class="p-title">おしゃれなカフェあります</p>
+        </div>
+        <div class="readmore">
+          <a href="/" class="border">READ MORE</a>
+        </div>
+      </div>
       <div class="up-box">
         <img src="" alt="">
         <div class="text-box">

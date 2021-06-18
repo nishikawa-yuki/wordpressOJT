@@ -43,7 +43,7 @@ header {
 }
 
 .header .header-right {
-  margin: auto;
+  margin: auto 0 auto auto;
 }
 
 .header .header-right .hamburger-button {
@@ -90,6 +90,7 @@ header {
 
 .main-view {
   position: relative;
+  z-index: -1;
 }
 
 .logo2 {
@@ -161,6 +162,7 @@ header {
     width: 100vw;
     height: 50vh;
     background: white;
+    opacity: 0.9;
     -webkit-transform: translateX(100vw);
             transform: translateX(100vw);
     -webkit-transition: all .3s linear;
@@ -190,7 +192,7 @@ header {
             align-items: center;
     width: 40px;
     height: 40px;
-    background: white;
+    background: transparent;
   }
   .menu-btn i {
     z-index: 2;
