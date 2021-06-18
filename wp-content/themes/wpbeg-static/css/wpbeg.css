@@ -95,7 +95,7 @@ header {
 
 .logo2 {
   position: absolute;
-  right: 0;
+  right: 2px;
   bottom: -7%;
   width: 31em;
   height: 17em;
@@ -142,7 +142,7 @@ header {
 
 @media screen and (max-width: 767px) {
   .menu {
-    display: flex;
+    /* display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -152,7 +152,7 @@ header {
             justify-content: center;
     -webkit-box-align: center;
         -ms-flex-align: center;
-            align-items: center;
+            align-items: center; */
     position: fixed;
     bottom: 0;
     right: 0;
@@ -165,6 +165,9 @@ header {
             transform: translateX(100vw);
     -webkit-transition: all .3s linear;
     transition: all .3s linear;
+  }
+  .menu > ul {
+    flex-direction: column;
   }
   .menu.is-active {
     -webkit-transform: translateX(0);
@@ -261,6 +264,7 @@ main {
 
 .box .up-box .text-box .p-title {
   overflow-wrap: break-word;
+  font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif;
 }
 
 .box .up-box .text-box .up-date {
