@@ -22,8 +22,6 @@
                         <li class="post__meta__item">
                             <date class="post__meta__date"><?php echo get_the_date(); ?></date>
                         </li>
-                        <li class="post__meta__item"><?php the_category( ', ' ); ?></li>
-                        <li class="post__meta__item"><?php the_tags( '' ); ?></li>
                     </ul>
                     <?php the_post_thumbnail(); ?>
                     <?php the_content( 'READ MORE' ); ?>
