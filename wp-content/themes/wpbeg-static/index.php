@@ -13,70 +13,27 @@
     <div class="main-h2">
       <h2>Latest Articles</h2>
     </div>
-    <div class="box">
-      <div class="up-box">
-        <img src="<?php echo get_template_directory_uri(); ?>/images/post_img_1.png" alt="">
-        <div class="text-box">
-          <p class="up-date">2018.5.12</p>
-          <p class="p-title">おしゃれなカフェあります</p>
-        </div>
-        <div class="readmore">
-          <a href="/" class="border">READ MORE</a>
-        </div>
-      </div>
-      <div class="up-box">
-        <img src="<?php echo get_template_directory_uri(); ?>/images/post_img_2.png" alt="">
-        <div class="text-box">
-          <p class="up-date">2017.7.8</p>
-          <p class="p-title">あのネオンはいつ交換するのか！？観覧車の謎に迫る</p>
-        </div>
-        <div class="readmore">
-          <a href="/" class="border">READ MORE</a>
-        </div>
-      </div>
-      <div class="up-box">
-        <img src="<?php echo get_template_directory_uri(); ?>/images/post_img_3.png" alt="">
-        <div class="text-box">
-          <p class="up-date">2017.7.8</p>
-          <p class="p-title">ラソナの社内はこんなよ</p>
-        </div>
-        <div class="readmore">
-          <a href="/" class="border">READ MORE</a>
-        </div>
-      </div>
-    </div>
-    <div class="box">
-      <div class="up-box">
-        <img src="<?php echo get_template_directory_uri(); ?>/images/post_img_4.png" alt="">
-        <div class="text-box">
-          <p class="up-date">2018.5.12</p>
-          <p class="p-title">おしゃれなカフェあります</p>
-        </div>
-        <div class="readmore">
-          <a href="/" class="border">READ MORE</a>
-        </div>
-      </div>
-      <div class="up-box">
-        <img src="<?php echo get_template_directory_uri(); ?>/images/post_img_5.png" alt="">
-        <div class="text-box">
-          <p class="up-date">2017.7.8</p>
-          <p class="p-title">あのネオンはいつ交換するのか！？観覧車の謎に迫る</p>
-        </div>
-        <div class="readmore">
-          <a href="/" class="border">READ MORE</a>
-        </div>
-      </div>
-      <div class="up-box">
-        <img src="<?php echo get_template_directory_uri(); ?>/images/post_img_6.png" alt="">
-        <div class="text-box">
-          <p class="up-date">2017.7.8</p>
-          <p class="p-title">ラソナの社内はこんなよ</p>
-        </div>
-        <div class="readmore">
-          <a href="/" class="border">READ MORE</a>
-        </div>
-      </div>
-    </div>
+      <div class="box">
+      <?php
+      if( have_posts() ) :
+          while( have_posts() ) :
+              the_post(); ?>
+          <div class="up-box">
+            <?php the_post_thumbnail( 'medium' );?>
+            <div class="text-box">
+              <p class="up-date"><?php echo get_the_date(); ?></p>
+              <?php the_title(); ?>
+            </div>
+            <div class="readmore">
+              <span class="border">READ MORE</span>
+            </div>
+          </div>
+                    <?php endwhile;
+                else :
+                    ?><p>表示する記事がありません</p><?php
+                endif;
+            ?>
+          </div>
   </main>
 
   <?php get_footer(); ?> 
